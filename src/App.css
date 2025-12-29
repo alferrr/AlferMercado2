@@ -431,7 +431,10 @@ body {
   }
 
   h1 {
+    position: relative;
     font-size: 3rem;
+    text-align: center;
+    z-index: 2;
   }
 
   .deets {
@@ -479,5 +482,129 @@ body {
   to {
     color: rgb(0, 255, 0);
     filter: drop-shadow(0 0 1px rgb(0, 255, 0));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    header {
+      display: none;
+      flex-direction: column;
+      gap: 0.5em;
+
+      img {
+        height: 3rem;
+      }
+
+      ul {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+      }
+    }
+
+    main {
+      height: 65vh;
+      .pill {
+        font-size: 12px;
+      }
+
+      .h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    nav {
+      padding: 0 5em;
+      gap: 1em;
+      flex-direction: column;
+      align-items: stretch;
+      position: relative;
+      z-index: 99;
+    }
+  }
+  .about {
+    main {
+      flex-direction: column-reverse;
+      padding: 2rem;
+
+      img {
+        border-radius: 16px;
+        width: 100%;
+      }
+      .text {
+        width: 100%;
+        margin-top: 20px;
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1rem;
+          text-align: justify;
+        }
+
+        table {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+  .works {
+    padding: 5rem 2rem;
+    h2 {
+      font-size: 3rem;
+    }
+
+    .container {
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+      padding: 2rem 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .contact {
+    min-height: 10vh;
+    justify-content: start;
+    padding: 2rem 0;
+
+    video {
+      display: none;
+    }
+    .gradient {
+      z-index: 1;
+      height: 10vh;
+    }
+
+    .pill {
+      z-index: 2;
+    }
+
+    h1 {
+      position: relative;
+      font-size: 1.5rem;
+      z-index: 2;
+    }
+
+    .deets {
+      font-size: 0.5rem;
+      z-index: 2;
+
+      .phone {
+        font-size: 0.9rem;
+      }
+    }
   }
 }

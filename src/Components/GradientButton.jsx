@@ -30,6 +30,7 @@ const GradientButton = ({
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
     letterSpacing: "-0.5px",
+    textAlign: "center",
   };
 
   const afterStyle = {
