@@ -18,7 +18,7 @@ export default function Hero() {
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           // Array - specify line count per wave; Number - same count for all waves
-          lineCount={[10, 15, 20]}
+          lineCount={[5, 8, 10]}
           // Array - specify line distance per wave; Number - same distance for all waves
           lineDistance={[8, 6, 4]}
           bendRadius={5.0}
@@ -33,16 +33,16 @@ export default function Hero() {
           <img src={Logo} alt="Logo" />
           <ul>
             <li>
-              <a href="">Home</a>
+              <a href="javascript:void(0)">Home</a>
             </li>
             <li>
-              <a href="">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a href="">Projects</a>
+              <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </header>
@@ -98,7 +98,10 @@ export default function Hero() {
         >
           <nav>
             <GradientButton href="#projects">View My Projects</GradientButton>
-            <GradientButton href="#projects">
+            <GradientButton
+              href="https://github.com/alferrr/AlferMercado2"
+              target="_blank"
+            >
               See My Code | Github
             </GradientButton>
           </nav>

@@ -4,6 +4,7 @@ const GradientButton = ({
   children = "View My Projects",
   href = "#projects",
   onClick,
+  target,
 }) => {
   const handleClick = (e) => {
     if (onClick) {
@@ -96,6 +97,8 @@ const GradientButton = ({
         transform: isHovered ? "scale(1.05)" : "scale(1)",
       }}
       href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
       onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
