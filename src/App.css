@@ -55,11 +55,6 @@ body {
   min-height: 100vh;
   width: 100vw;
 
-  .herobg {
-    position: absolute;
-    z-index: 0;
-  }
-
   header,
   main {
     position: relative;
@@ -126,8 +121,13 @@ body {
       }
     }
 
-    h1 {
+    .h1 {
       margin-top: 20px;
+      font-family: "Satoshi", sans-serif;
+      font-size: 92px;
+      font-weight: 100;
+      width: 100%;
+      color: white;
     }
 
     .p {
@@ -231,6 +231,11 @@ body {
       object-fit: cover;
     }
   }
+
+  .img,
+  .text {
+    z-index: 2;
+  }
 }
 
 .works {
@@ -260,8 +265,8 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.288);
 
-    width: 70%;
-    height: 40vh;
+    width: 90%;
+    height: 50vh;
 
     img {
       height: 100%;
@@ -281,6 +286,8 @@ body {
       .stack {
         display: flex;
         gap: 0.5em;
+        margin-top: 12px;
+        pointer-events: none;
 
         span {
           padding: 5px 14px;
@@ -296,6 +303,34 @@ body {
         .gsap {
           background: rgba(136, 204, 51, 0.14);
           color: rgba(180, 255, 90, 0.95);
+        }
+
+        .html {
+          background: rgba(227, 79, 38, 0.14);
+          color: rgba(255, 140, 95, 0.95);
+        }
+
+        .css {
+          background: rgba(38, 77, 228, 0.14);
+          color: rgba(120, 150, 255, 0.95);
+        }
+
+        .js {
+          background: rgba(240, 219, 79, 0.14);
+          color: rgba(255, 245, 160, 0.95);
+        }
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 200;
+        font-size: 14px;
+        margin-top: 20px;
+        transition: 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

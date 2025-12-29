@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Triangle } from "ogl";
-import "./Plasma.css";
 
 const hexToRgb = (hex) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -47,7 +46,7 @@ void mainImage(out vec4 o, vec2 C) {
   float i, d, z, T = iTime * uSpeed * uDirection;
   vec3 O, p, S;
 
-  for (vec2 r = iResolution.xy, Q; ++i < 60.; O += o.w/d*o.xyz) {
+  for (vec2 r = iResolution.xy, Q; ++i < 40.; O += o.w/d*o.xyz) {
     p = z*normalize(vec3(C-.5*r,r.y)); 
     p.z -= 4.; 
     S = p;
@@ -94,6 +93,7 @@ export const Plasma = ({
 }) => {
   const containerRef = useRef(null);
   const mousePos = useRef({ x: 0, y: 0 });
+  const rafRef = useRef(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -101,24 +101,23 @@ export const Plasma = ({
 
     const useCustomColor = color ? 1.0 : 0.0;
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1];
-
     const directionMultiplier = direction === "reverse" ? -1.0 : 1.0;
 
     const renderer = new Renderer({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      dpr: Math.min(window.devicePixelRatio || 1, 1.5),
     });
+    
     const gl = renderer.gl;
     const canvas = gl.canvas;
     canvas.style.display = "block";
     canvas.style.width = "100%";
     canvas.style.height = "100%";
-    containerRef.current.appendChild(canvas);
+    containerEl.appendChild(canvas);
 
     const geometry = new Triangle(gl);
-
     const program = new Program(gl, {
       vertex: vertex,
       fragment: fragment,
@@ -138,9 +137,16 @@ export const Plasma = ({
 
     const mesh = new Mesh(gl, { geometry, program });
 
+    let throttleTimeout = null;
     const handleMouseMove = (e) => {
       if (!mouseInteractive) return;
-      const rect = containerRef.current.getBoundingClientRect();
+      if (throttleTimeout) return;
+      
+      throttleTimeout = setTimeout(() => {
+        throttleTimeout = null;
+      }, 16);
+      
+      const rect = containerEl.getBoundingClientRect();
       mousePos.current.x = e.clientX - rect.left;
       mousePos.current.y = e.clientY - rect.top;
       const mouseUniform = program.uniforms.uMouse.value;
@@ -149,24 +155,32 @@ export const Plasma = ({
     };
 
     if (mouseInteractive) {
-      containerEl.addEventListener("mousemove", handleMouseMove);
+      containerEl.addEventListener("mousemove", handleMouseMove, { passive: true });
     }
 
+    let currentWidth = 0;
+    let currentHeight = 0;
     const setSize = () => {
-      const rect = containerRef.current.getBoundingClientRect();
+      const rect = containerEl.getBoundingClientRect();
       const width = Math.max(1, Math.floor(rect.width));
       const height = Math.max(1, Math.floor(rect.height));
+      
+      if (width === currentWidth && height === currentHeight) return;
+      
+      currentWidth = width;
+      currentHeight = height;
       renderer.setSize(width, height);
       const res = program.uniforms.iResolution.value;
       res[0] = gl.drawingBufferWidth;
       res[1] = gl.drawingBufferHeight;
     };
 
-    const ro = new ResizeObserver(setSize);
+    const ro = new ResizeObserver(() => {
+      requestAnimationFrame(setSize);
+    });
     ro.observe(containerEl);
     setSize();
 
-    let raf = 0;
     const t0 = performance.now();
     const loop = (t) => {
       let timeValue = (t - t0) * 0.001;
@@ -185,25 +199,39 @@ export const Plasma = ({
         program.uniforms.iTime.value = timeValue;
       }
       renderer.render({ scene: mesh });
-      raf = requestAnimationFrame(loop);
+      rafRef.current = requestAnimationFrame(loop);
     };
-    raf = requestAnimationFrame(loop);
+    rafRef.current = requestAnimationFrame(loop);
 
     return () => {
-      cancelAnimationFrame(raf);
+      cancelAnimationFrame(rafRef.current);
       ro.disconnect();
       if (mouseInteractive && containerEl) {
         containerEl.removeEventListener("mousemove", handleMouseMove);
       }
       try {
-        containerEl?.removeChild(canvas);
-      } catch {
-        console.warn("Canvas already removed from container");
+        if (canvas.parentNode === containerEl) {
+          containerEl.removeChild(canvas);
+        }
+      } catch (e) {
+        console.warn("Canvas cleanup error:", e);
       }
     };
   }, [color, speed, direction, scale, opacity, mouseInteractive]);
 
-  return <div ref={containerRef} className="plasma-container" />;
+  return (
+    <div 
+      ref={containerRef} 
+      style={{
+        width: '100%',
+        height: '100vh',
+        position: 'absolute',
+        overflow: 'hidden',
+        background: '#000',
+        zIndex: -1,
+      }}
+    />
+  );
 };
 
 export default Plasma;
