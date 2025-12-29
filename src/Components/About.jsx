@@ -3,7 +3,7 @@ import "../App.css";
 import { motion } from "motion/react";
 
 import LogoLoop from "./LogoLoop/LogoLoop.jsx";
-import Alfer from "../assets/images/Me.jpg";
+import Alfer from "../assets/images/Me.JPG";
 
 import { SiC } from "react-icons/si";
 import { SiCplusplus } from "react-icons/si";
