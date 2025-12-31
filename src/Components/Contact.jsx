@@ -51,7 +51,7 @@ export default function Contact() {
           className="deets"
         >
           <div className="socials">
-            <a href="https://instagram.com/alfermercado" target="_blank">
+            <a href="https://instagram.com/alfermercads" target="_blank">
               <FaInstagram />
             </a>
             <a href="https://github.com/alferrr" target="_blank">
