@@ -361,6 +361,16 @@ body {
           background: rgba(65, 184, 131, 0.14);
           color: rgba(140, 255, 200, 0.95);
         }
+
+        .angular {
+          background: rgba(221, 27, 44, 0.14);
+          color: rgba(255, 120, 130, 0.95);
+        }
+
+        .typescript {
+          background: rgba(49, 120, 198, 0.14);
+          color: rgba(140, 190, 255, 0.95);
+        }
       }
 
       a {

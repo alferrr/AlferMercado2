@@ -15,6 +15,8 @@ import { SiTailwindcss } from "react-icons/si";
 import { SiReact } from "react-icons/si";
 import { SiGit } from "react-icons/si";
 import { SiVercel } from "react-icons/si";
+import { SiVuedotjs } from "react-icons/si";
+
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 export default function About() {
@@ -50,6 +52,7 @@ export default function About() {
       title: "Tailwind CSS",
       href: "https://tailwindcss.com",
     },
+    { node: <SiVuedotjs />, title: "Vue", href: "https://vuejs.org/" },
     { node: <SiReact />, title: "React", href: "https://react.dev" },
     { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
     { node: <SiVercel />, title: "Vercel", href: "https://vercel.com" },

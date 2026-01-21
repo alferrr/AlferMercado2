@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 import "../App.css";
-import { motion } from "motion/react";
+import { easeIn, easeInOut, motion } from "motion/react";
 
 import Carousel from "./Carousel/Carousel.jsx";
 import FloatingLines from "./FloatingLines/FloatingLines.jsx";
@@ -11,6 +11,7 @@ import Hci from "../assets/images/hci.png";
 import Truth from "../assets/images/truth.png";
 import Port from "../assets/images/port.jpeg";
 import Cvue from "../assets/images/Cvue.png";
+import Anguledger from "../assets/images/anguledger.jpeg";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { IoMdArrowForward } from "react-icons/io";
@@ -20,24 +21,15 @@ export default function Works() {
   const projects = [
     {
       id: 1,
-      image: Hci,
-      title: "When the Scrolling Stops",
-      description: "Parallax Website made with React + GSAP",
-      stack: ["React", "GSAP"],
-      link: "https://alferrr.github.io/HCI/",
+      image: Anguledger,
+      title: "Anguledger",
+      description:
+        "Anguledger is a lightweight expense-tracking web app built with Angular, allowing users to record, categorize, and visualize expenses through a clean, intuitive dashboard.",
+      stack: ["React", "Angular", "Typescript"],
     },
 
     {
       id: 2,
-      image: Truth,
-      title: "Truth Matters",
-      description: "Fictional campaign website for Purposive Communication",
-      stack: ["React"],
-      link: "https://truthmatters-tau.vercel.app",
-    },
-
-    {
-      id: 3,
       image: Cvue,
       title: "CVue",
       description:
@@ -47,7 +39,25 @@ export default function Works() {
     },
 
     {
+      id: 3,
+      image: Truth,
+      title: "Truth Matters",
+      description: "Fictional campaign website for Purposive Communication",
+      stack: ["React"],
+      link: "https://truthmatters-tau.vercel.app",
+    },
+
+    {
       id: 4,
+      image: Hci,
+      title: "When the Scrolling Stops",
+      description: "Parallax Website made with React + GSAP",
+      stack: ["React", "GSAP"],
+      link: "https://alferrr.github.io/HCI/",
+    },
+
+    {
+      id: 5,
       image: Port,
       title: "First Personal Portfolio",
       description:
@@ -75,7 +85,7 @@ export default function Works() {
               initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: easeIn }}
               className="container"
             >
               <img src={projects.image} alt="" />
