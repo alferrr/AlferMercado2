@@ -10,12 +10,14 @@ import { SiCplusplus } from "react-icons/si";
 import { SiHtml5 } from "react-icons/si";
 import { SiCss3 } from "react-icons/si";
 import { SiJavascript } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 import { SiBootstrap } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { SiReact } from "react-icons/si";
 import { SiGit } from "react-icons/si";
 import { SiVercel } from "react-icons/si";
 import { SiVuedotjs } from "react-icons/si";
+import { SiAngular } from "react-icons/si";
 
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
@@ -43,6 +45,11 @@ export default function About() {
       href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
+      node: <SiTypescript />,
+      title: "Vercel",
+      href: "https://www.typescriptlang.org/",
+    },
+    {
       node: <SiBootstrap />,
       title: "Bootstrap",
       href: "https://getbootstrap.com",
@@ -54,6 +61,7 @@ export default function About() {
     },
     { node: <SiVuedotjs />, title: "Vue", href: "https://vuejs.org/" },
     { node: <SiReact />, title: "React", href: "https://react.dev" },
+    { node: <SiAngular />, title: "Angular", href: "https://angular.dev/" },
     { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
     { node: <SiVercel />, title: "Vercel", href: "https://vercel.com" },
   ];
