@@ -26,6 +26,7 @@ export default function Works() {
       description:
         "Anguledger is a lightweight expense-tracking web app built with Angular, allowing users to record, categorize, and visualize expenses through a clean, intuitive dashboard.",
       stack: ["React", "Angular", "Typescript"],
+      link: "https://anguledger.vercel.app/",
     },
 
     {
