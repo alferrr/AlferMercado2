@@ -7,11 +7,11 @@ import Carousel from "./Carousel/Carousel.jsx";
 import FloatingLines from "./FloatingLines/FloatingLines.jsx";
 import Contact from "./Contact.jsx";
 
-import Hci from "../assets/images/hci.png";
-import Truth from "../assets/images/truth.png";
+import Hci from "../assets/images/4.png";
+import Truth from "../assets/images/3.png";
 import Port from "../assets/images/port.jpeg";
-import Cvue from "../assets/images/Cvue.png";
-import Anguledger from "../assets/images/anguledger.jpeg";
+import Cvue from "../assets/images/2.png";
+import Anguledger from "../assets/images/1.png";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { IoMdArrowForward } from "react-icons/io";
