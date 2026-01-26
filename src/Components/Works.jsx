@@ -9,7 +9,7 @@ import Contact from "./Contact.jsx";
 
 import Hci from "../assets/images/4.png";
 import Truth from "../assets/images/3.png";
-import Port from "../assets/images/port.jpeg";
+import Port from "../assets/images/5.png";
 import Cvue from "../assets/images/2.png";
 import Anguledger from "../assets/images/1.png";
 
