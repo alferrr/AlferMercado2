@@ -3,12 +3,19 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url(/assets/styles/fonts/satoshi/Satoshi-Regular.otf);
+  src: url("../public/fonts/satoshi/Satoshi-Regular.otf") format("opentype");
+
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Satoshi Med";
-  src: url(/assets/styles/fonts/satoshi/Satoshi-Medium.otf);
+  font-family: "Satoshi";
+  src: url("../public/fonts/satoshi/Satoshi-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
