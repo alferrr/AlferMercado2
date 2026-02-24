@@ -64,7 +64,7 @@ export default function Works() {
       description:
         "Personal Portfolio that showcases all the topics covered in Introduction to Computing",
       stack: ["HTML", "CSS", "Javascript"],
-      link: "",
+      link: "/https://alferrr.github.io/AlferMercado/",
     },
   ];
   return (
