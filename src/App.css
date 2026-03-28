@@ -378,6 +378,24 @@ body {
           background: rgba(49, 120, 198, 0.14);
           color: rgba(140, 190, 255, 0.95);
         }
+
+        .laravel {
+          background: rgba(255, 45, 32, 0.14);
+          border-color: rgba(255, 45, 32, 0.35);
+          color: rgba(255, 140, 130, 0.95);
+        }
+
+        .axios {
+          background: rgba(124, 58, 237, 0.14);
+          border-color: rgba(124, 58, 237, 0.35);
+          color: rgba(200, 170, 255, 0.95);
+        }
+
+        .sqlite {
+          background: rgba(0, 102, 153, 0.14);
+          border-color: rgba(0, 102, 153, 0.35);
+          color: rgba(120, 190, 255, 0.95);
+        }
       }
 
       a {

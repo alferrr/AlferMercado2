@@ -12,6 +12,7 @@ import Truth from "../assets/images/3.png";
 import Port from "../assets/images/5.png";
 import Cvue from "../assets/images/2.png";
 import Anguledger from "../assets/images/1.png";
+import Larabill from "../assets/images/larabill.png";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { IoMdArrowForward } from "react-icons/io";
@@ -21,6 +22,16 @@ export default function Works() {
   const projects = [
     {
       id: 1,
+      image: Larabill,
+      title: "Larabill",
+      description:
+        "Larabill is a full-stack subscription management platform designed to help users organize recurring bills, monitor expenses, and stay on top of their finances.",
+      stack: ["Vue", "Laravel", "Axios", "SQLite"],
+      link: "https://larabill.vercel.app/",
+    },
+
+    {
+      id: 2,
       image: Anguledger,
       title: "Anguledger",
       description:
@@ -30,7 +41,7 @@ export default function Works() {
     },
 
     {
-      id: 2,
+      id: 3,
       image: Cvue,
       title: "CVue",
       description:
@@ -40,7 +51,7 @@ export default function Works() {
     },
 
     {
-      id: 3,
+      id: 4,
       image: Truth,
       title: "Truth Matters",
       description: "Fictional campaign website for Purposive Communication",
@@ -49,22 +60,12 @@ export default function Works() {
     },
 
     {
-      id: 4,
+      id: 5,
       image: Hci,
       title: "When the Scrolling Stops",
       description: "Parallax Website made with React + GSAP",
       stack: ["React", "GSAP"],
       link: "https://alferrr.github.io/HCI/",
-    },
-
-    {
-      id: 5,
-      image: Port,
-      title: "First Personal Portfolio",
-      description:
-        "Personal Portfolio that showcases all the topics covered in Introduction to Computing",
-      stack: ["HTML", "CSS", "Javascript"],
-      link: "/https://alferrr.github.io/AlferMercado/",
     },
   ];
   return (
