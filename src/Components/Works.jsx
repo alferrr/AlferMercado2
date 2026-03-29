@@ -10,7 +10,7 @@ import Contact from "./Contact.jsx";
 import Hci from "../assets/images/4.png";
 import Truth from "../assets/images/truthmatters.png";
 import Port from "../assets/images/5.png";
-import Cvue from "../assets/images/cvue.png";
+import Cvue from "../assets/images/cv.png";
 import Anguledger from "../assets/images/1.png";
 import Larabill from "../assets/images/larabill.png";
 import Devpal from "../assets/images/devpal.png";
