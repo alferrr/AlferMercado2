@@ -8,12 +8,12 @@ import FloatingLines from "./FloatingLines/FloatingLines.jsx";
 import Contact from "./Contact.jsx";
 
 import Hci from "../assets/images/4.png";
-import Truth from "../assets/images/3.png";
+import Truth from "../assets/images/truthmatters.png";
 import Port from "../assets/images/5.png";
-import Cvue from "../assets/images/2.png";
+import Cvue from "../assets/images/cvue.png";
 import Anguledger from "../assets/images/1.png";
 import Larabill from "../assets/images/larabill.png";
-
+import Devpal from "../assets/images/devpal.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { IoMdArrowForward } from "react-icons/io";
 import { stack } from "three/tsl";
@@ -49,9 +49,18 @@ export default function Works() {
       stack: ["Vue"],
       link: "https://cvue-nine.vercel.app/",
     },
-
     {
       id: 4,
+      image: Devpal,
+      title: "DevPal",
+      description:
+        "DevPal is a docs-based learning platform that helps beginners build a strong foundation in frontend development. It currently covers HTML, CSS, and Git, with more lessons and topics coming soon.",
+      stack: ["HTML", "CSS", "Javascript"],
+      link: "https://devpal-pink.vercel.app/",
+    },
+
+    {
+      id: 5,
       image: Truth,
       title: "Truth Matters",
       description: "Fictional campaign website for Purposive Communication",
@@ -60,7 +69,7 @@ export default function Works() {
     },
 
     {
-      id: 5,
+      id: 6,
       image: Hci,
       title: "When the Scrolling Stops",
       description: "Parallax Website made with React + GSAP",
