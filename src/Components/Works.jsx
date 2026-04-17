@@ -67,15 +67,6 @@ export default function Works() {
       stack: ["React"],
       link: "https://truthmatters-tau.vercel.app",
     },
-
-    {
-      id: 6,
-      image: Hci,
-      title: "When the Scrolling Stops",
-      description: "Parallax Website made with React + GSAP",
-      stack: ["React", "GSAP"],
-      link: "https://alferrr.github.io/HCI/",
-    },
   ];
   return (
     <>
