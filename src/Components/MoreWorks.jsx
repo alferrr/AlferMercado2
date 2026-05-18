@@ -24,7 +24,15 @@ const PROJECT_IMAGES = {
   kwnta: Kwnta,
 };
 
-const INCLUDE = ["jeepni", "kwnta", "larabill", "anguledger"];
+const INCLUDE = [
+  "jeepni",
+  "kwnta",
+  "larabill",
+  "anguledger",
+  "cvue",
+  "devpal",
+  "truthmatters",
+];
 
 const OVERRIDES = {
   larabill: {
@@ -143,7 +151,7 @@ export default function MoreWorks() {
 
   return (
     <section>
-      <main className="works" id="projects">
+      <main className="works more-works" id="projects">
         <motion.div
           initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -163,54 +171,56 @@ export default function MoreWorks() {
           </p>
         )}
 
-        {!loading &&
-          !error &&
-          projects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, ease: easeIn }}
-              className="container"
-            >
-              {project.image ? (
-                <img src={project.image} alt={project.title} />
-              ) : (
-                <div className="no-image">{project.title[0]}</div>
-              )}
+        <div className="projects-container">
+          {!loading &&
+            !error &&
+            projects.map((project) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: easeIn }}
+                className="container"
+              >
+                {project.image ? (
+                  <img src={project.image} alt={project.title} />
+                ) : (
+                  <div className="no-image">{project.title[0]}</div>
+                )}
 
-              <div className="text">
-                <div className="cntr">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  {project.stack.length > 0 && (
-                    <div className="stack">
-                      {sortStack(project.stack).map((tag) => (
-                        <span key={tag} className={tag.toLowerCase()}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                <div className="text">
+                  <div className="cntr">
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    {project.stack.length > 0 && (
+                      <div className="stack">
+                        {sortStack(project.stack).map((tag) => (
+                          <span key={tag} className={tag.toLowerCase()}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.link.includes("github.com")
+                      ? "View Repo"
+                      : "View Website"}{" "}
+                    <IoMdArrowForward className="icon" />
+                  </a>
                 </div>
+              </motion.div>
+            ))}
+        </div>
 
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project.link.includes("github.com")
-                    ? "View Repo"
-                    : "View Website"}{" "}
-                  <IoMdArrowForward className="icon" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-
-        <Link to="/works" className="seemore">
-          See more of my Works
+        <Link to="/" className="seemore">
+          Back to Home
         </Link>
       </main>
     </section>
