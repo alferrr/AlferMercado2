@@ -2,15 +2,26 @@
   {
     "id": 1200075353,
     "title": "JeepNi",
-    "description": "",
-    "stack": [],
+    "description": "JeepNi is a community-driven Cebu transport app for jeepneys, buses, and tricycles with route planning, real-time alerts, intelligent rerouting, rewards, and local business promotions.",
+    "stack": [
+      "express",
+      "mapbox",
+      "react",
+      "resend",
+      "supabase"
+    ],
     "link": "https://jeepni-app.vercel.app"
   },
   {
     "id": 1232065971,
     "title": "Kwnta",
-    "description": "",
-    "stack": [],
+    "description": "kwnta is a web app for tracking shared group expenses, log what was spent, split it equally, and always know who owes who.",
+    "stack": [
+      "css",
+      "html",
+      "javascript",
+      "php"
+    ],
     "link": "https://kwnta.dcism.org"
   },
   {
@@ -40,5 +51,14 @@
     "description": "",
     "stack": [],
     "link": "https://devpal-pink.vercel.app"
+  },
+  {
+    "id": 1118934193,
+    "title": "TruthMatters",
+    "description": "Fictional campaign website for purposive communications final project.",
+    "stack": [
+      "react"
+    ],
+    "link": "https://truthmatters-tau.vercel.app"
   }
 ]

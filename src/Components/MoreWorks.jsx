@@ -10,6 +10,8 @@ import Devpal from "../assets/images/devpal.png";
 import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
+import Wandmag from "../assets/images/wandmag.png";
+
 import { Link } from "react-router-dom";
 
 const GITHUB_USERNAME = "alferrr";
@@ -22,9 +24,11 @@ const PROJECT_IMAGES = {
   truthmatters: Truth,
   jeepni: Jeepni,
   kwnta: Kwnta,
+  wanderingmagnolia: Wandmag,
 };
 
 const INCLUDE = [
+  "wanderingmagnolia",
   "jeepni",
   "kwnta",
   "larabill",
@@ -72,6 +76,7 @@ const STACK_ORDER = {
   angular: 6,
 
   // backend
+  php: 7,
   laravel: 7,
   nodejs: 8,
   express: 9,
@@ -85,6 +90,8 @@ const STACK_ORDER = {
   axios: 14,
   mapbox: 15,
   resend: 16,
+  cloudinary: 17,
+  docker: 18,
 };
 
 const sortStack = (stack) =>

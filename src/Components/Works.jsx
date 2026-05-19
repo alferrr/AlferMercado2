@@ -10,6 +10,7 @@ import Devpal from "../assets/images/devpal.png";
 import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
+import Wandmag from "../assets/images/wandmag.png";
 import { Link } from "react-router-dom";
 
 const GITHUB_USERNAME = "alferrr";
@@ -22,9 +23,10 @@ const PROJECT_IMAGES = {
   truthmatters: Truth,
   jeepni: Jeepni,
   kwnta: Kwnta,
+  wanderingmagnolia: Wandmag,
 };
 
-const INCLUDE = ["jeepni", "kwnta", "larabill", "anguledger"];
+const INCLUDE = ["wanderingmagnolia", "jeepni", "kwnta", "anguledger"];
 
 const OVERRIDES = {
   larabill: {
