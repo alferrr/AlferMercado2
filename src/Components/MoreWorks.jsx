@@ -11,7 +11,6 @@ import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
 import Wandmag from "../assets/images/wandmag.png";
-
 import { Link } from "react-router-dom";
 
 const GITHUB_USERNAME = "alferrr";
@@ -39,6 +38,31 @@ const INCLUDE = [
 ];
 
 const OVERRIDES = {
+  wanderingmagnolia: {
+    description:
+      "A community-driven recipe sharing platform where you can discover curated recipes, add your own, remix others' creations, and generate grocery lists.",
+    stack: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "PHP",
+      "Resend",
+      "Cloudinary",
+      "Docker",
+    ],
+    offline: true,
+  },
+  jeepni: {
+    description:
+      "Jeepni is a real-time public transit routing app for Cebu City, helping commuters navigate jeepney and bus routes across the city.",
+    stack: ["React", "Express", "Supabase", "Mapbox"],
+    offline: true,
+  },
+  // kwnta: {
+  //   description:
+  //     "Kwnta is a personal finance tracker that helps users manage their expenses, income, and budgets in one clean dashboard.",
+  //   stack: ["React", "Laravel", "SQLite"],
+  // },
   larabill: {
     description:
       "Larabill is a full-stack subscription management platform designed to help users organize recurring bills, monitor expenses, and stay on top of their finances.",
@@ -66,7 +90,6 @@ const OVERRIDES = {
 };
 
 const STACK_ORDER = {
-  // frontend
   html: 0,
   css: 1,
   javascript: 2,
@@ -74,19 +97,14 @@ const STACK_ORDER = {
   react: 4,
   vue: 5,
   angular: 6,
-
-  // backend
   php: 7,
   laravel: 7,
   nodejs: 8,
   express: 9,
-
-  // db
   sqlite: 10,
   mysql: 11,
   postgresql: 12,
   supabase: 13,
-
   axios: 14,
   mapbox: 15,
   resend: 16,
@@ -142,6 +160,7 @@ export default function MoreWorks() {
               stack: override.stack ?? r.topics ?? [],
               link: r.homepage || r.html_url,
               image: PROJECT_IMAGES[key] ?? null,
+              offline: override.offline ?? false,
             };
           });
 
@@ -211,16 +230,20 @@ export default function MoreWorks() {
                     )}
                   </div>
 
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.link.includes("github.com")
-                      ? "View Repo"
-                      : "View Website"}{" "}
-                    <IoMdArrowForward className="icon" />
-                  </a>
+                  {project.offline ? (
+                    <span className="offline-badge">Server Offline</span>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.link.includes("github.com")
+                        ? "View Repo"
+                        : "View Website"}{" "}
+                      <IoMdArrowForward className="icon" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}

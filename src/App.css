@@ -576,8 +576,8 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex: 1; /* takes remaining space in the card */
-      min-height: unset; /* remove the 250px min-height */
+      flex: 1;
+      min-height: unset;
 
       .cntr {
         display: flex;
@@ -863,5 +863,24 @@ body {
         bottom: 20px; */
       }
     }
+  }
+}
+
+.offline-badge {
+  font-size: 14px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 80, 80, 0.6);
+    display: inline-block;
   }
 }
