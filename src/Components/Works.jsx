@@ -45,7 +45,7 @@ const OVERRIDES = {
   },
   jeepni: {
     description:
-      "Jeepni is a real-time public transit routing app for Cebu City, helping commuters navigate jeepney and bus routes across the city.",
+      "JeepNi is a community-driven Cebu transport app for jeepneys, buses, and tricycles with route planning, real-time alerts, intelligent rerouting, rewards, and local business promotions.",
     stack: ["React", "Express", "Supabase", "Mapbox"],
     offline: true,
   },
