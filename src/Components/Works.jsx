@@ -10,7 +10,7 @@ import Devpal from "../assets/images/devpal.png";
 import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
-import Wandmag from "../assets/images/wandmag.png";
+import Wandmag from "../assets/images/wandmag-new.png";
 import { Link } from "react-router-dom";
 
 const GITHUB_USERNAME = "alferrr";
@@ -29,20 +29,20 @@ const PROJECT_IMAGES = {
 const INCLUDE = ["wanderingmagnolia", "jeepni", "kwnta", "anguledger"];
 
 const OVERRIDES = {
-  wanderingmagnolia: {
-    description:
-      "A community-driven recipe sharing platform where you can discover curated recipes, add your own, remix others' creations, and generate grocery lists.",
-    stack: [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "PHP",
-      "Resend",
-      "Cloudinary",
-      "Docker",
-    ],
-    offline: true,
-  },
+  // wanderingmagnolia: {
+  //   description:
+  //     "A community-driven recipe sharing platform where you can discover curated recipes, add your own, remix others' creations, and generate grocery lists.",
+  //   stack: [
+  //     "HTML",
+  //     "CSS",
+  //     "Javascript",
+  //     "PHP",
+  //     "Resend",
+  //     "Cloudinary",
+  //     "Docker",
+  //   ],
+  //   offline: true,
+  // },
   jeepni: {
     description:
       "JeepNi is a community-driven Cebu transport app for jeepneys, buses, and tricycles with route planning, real-time alerts, intelligent rerouting, rewards, and local business promotions.",
