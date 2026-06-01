@@ -52,12 +52,12 @@ const OVERRIDES = {
   //   ],
   //   offline: true,
   // },
-  jeepni: {
-    description:
-      "JeepNi is a community-driven Cebu transport app for jeepneys, buses, and tricycles with route planning, real-time alerts, intelligent rerouting, rewards, and local business promotions.",
-    stack: ["React", "Express", "Supabase", "Mapbox"],
-    offline: true,
-  },
+  // jeepni: {
+  //   description:
+  //     "JeepNi is a community-driven Cebu transport app for jeepneys, buses, and tricycles with route planning, real-time alerts, intelligent rerouting, rewards, and local business promotions.",
+  //   stack: ["React", "Express", "Supabase", "Mapbox"],
+  //   offline: true,
+  // },
   // kwnta: {
   //   description:
   //     "Kwnta is a personal finance tracker that helps users manage their expenses, income, and budgets in one clean dashboard.",
