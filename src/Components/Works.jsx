@@ -10,6 +10,7 @@ import Devpal from "../assets/images/devpal.png";
 import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
+import Motiq from "../assets/images/motiq.png";
 import Wandmag from "../assets/images/wandmag-new.png";
 import { Link } from "react-router-dom";
 
@@ -23,12 +24,16 @@ const PROJECT_IMAGES = {
   truthmatters: Truth,
   jeepni: Jeepni,
   kwnta: Kwnta,
+  motiq: Motiq,
   wanderingmagnolia: Wandmag,
 };
 
-const INCLUDE = ["wanderingmagnolia", "jeepni", "kwnta", "anguledger"];
+const INCLUDE = ["jeepni", "motiq", "wanderingmagnolia", "kwnta", "anguledger"];
 
 const OVERRIDES = {
+  motiq: {
+    title: "Motiq",
+  },
   // wanderingmagnolia: {
   //   description:
   //     "A community-driven recipe sharing platform where you can discover curated recipes, add your own, remix others' creations, and generate grocery lists.",
@@ -81,6 +86,8 @@ const OVERRIDES = {
 };
 
 const STACK_ORDER = {
+  nextjs: -2,
+  tailwindcss: -1,
   html: 0,
   css: 1,
   javascript: 2,
@@ -90,10 +97,8 @@ const STACK_ORDER = {
   angular: 6,
   php: 7,
   laravel: 7,
-  nodejs: 8,
   express: 9,
   sqlite: 10,
-  mysql: 11,
   postgresql: 12,
   supabase: 13,
   axios: 14,
@@ -101,6 +106,8 @@ const STACK_ORDER = {
   resend: 16,
   cloudinary: 17,
   docker: 18,
+  nodejs: 19,
+  mysql: 20,
 };
 
 const sortStack = (stack) =>
@@ -119,7 +126,7 @@ export default function Works() {
     async function fetchRepos() {
       try {
         const res = await fetch(
-          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=30`,
+          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
           {
             headers: {
               Accept: "application/vnd.github.mercy-preview+json",
@@ -143,7 +150,7 @@ export default function Works() {
             const override = OVERRIDES[key] ?? {};
             return {
               id: r.id,
-              title: r.name,
+              title: override.title || r.name,
               description:
                 override.description ||
                 r.description ||

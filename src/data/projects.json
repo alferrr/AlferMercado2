@@ -13,6 +13,18 @@
     "link": "https://jeepni-app.vercel.app"
   },
   {
+    "id": 1279841300,
+    "title": "Motiq",
+    "description": "Multi-tenant garage management SaaS built with Next.js 15, TypeScript, and MySQL. Covers the full vehicle repair lifecycle: appointments, job orders, inventory, invoicing, and payments.",
+    "stack": [
+      "mysql",
+      "nextjs",
+      "nodejs",
+      "tailwindcss"
+    ],
+    "link": "https://motiq.dcism.org"
+  },
+  {
     "id": 1232065971,
     "title": "Kwnta",
     "description": "kwnta is a web app for tracking shared group expenses, log what was spent, split it equally, and always know who owes who.",

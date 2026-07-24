@@ -441,6 +441,30 @@ body {
           color: rgba(140, 210, 255, 0.95);
           border-color: rgba(36, 150, 237, 0.35);
         }
+
+        .nextjs {
+          background: rgba(255, 255, 255, 0.1);
+          color: rgba(255, 255, 255, 0.95);
+          border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .mysql {
+          background: rgba(0, 117, 143, 0.14);
+          color: rgba(120, 210, 240, 0.95);
+          border-color: rgba(0, 117, 143, 0.35);
+        }
+
+        .nodejs {
+          background: rgba(51, 153, 51, 0.14);
+          color: rgba(140, 230, 140, 0.95);
+          border-color: rgba(51, 153, 51, 0.35);
+        }
+
+        .tailwindcss {
+          background: rgba(56, 189, 248, 0.14);
+          color: rgba(140, 220, 255, 0.95);
+          border-color: rgba(56, 189, 248, 0.35);
+        }
       }
 
       a {

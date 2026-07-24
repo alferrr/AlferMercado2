@@ -5,6 +5,7 @@ const GITHUB_USERNAME = "alferrr";
 const OUTPUT_PATH = path.resolve("src/data/projects.json");
 const INCLUDE = [
   "jeepni",
+  "motiq",
   "kwnta",
   "larabill",
   "anguledger",
@@ -17,7 +18,7 @@ async function run() {
   console.log(`Fetching repos for @${GITHUB_USERNAME}...`);
 
   const res = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=30`,
+    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
     {
       headers: {
         Accept: "application/vnd.github.mercy-preview+json",
