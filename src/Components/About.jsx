@@ -84,7 +84,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <p>
-                I am Alfer Mercado, a first-year Information Technology student
+                I am Alfer Mercado, a second year Information Technology student
                 at the University of San Carlos (USC) in Cebu. My focus is on
                 web development, where I am dedicated to mastering foundational
                 programming and creating functional, well-structured projects. I
