@@ -11,6 +11,7 @@ import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
 import Motiq from "../assets/images/motiq.png";
+import Ciscogni from "../assets/images/ciscogniPoster.png";
 import Wandmag from "../assets/images/wandmag-new.png";
 import { Link } from "react-router-dom";
 
@@ -25,10 +26,12 @@ const PROJECT_IMAGES = {
   jeepni: Jeepni,
   kwnta: Kwnta,
   motiq: Motiq,
+  ciscogni: Ciscogni,
   wanderingmagnolia: Wandmag,
 };
 
 const INCLUDE = [
+  "ciscogni",
   "jeepni",
   "motiq",
   "wanderingmagnolia",
@@ -41,6 +44,12 @@ const INCLUDE = [
 ];
 
 const OVERRIDES = {
+  ciscogni: {
+    title: "Ciscogni",
+    description:
+      "Gamified practice platform for USC Programming 1 and 2 students, with quiz sessions, XP, streaks, achievements, and class leaderboards.",
+    stack: ["nextjs", "typescript", "sequelize"],
+  },
   motiq: {
     title: "Motiq",
   },
@@ -117,6 +126,7 @@ const STACK_ORDER = {
   cloudinary: 17,
   docker: 18,
   nodejs: 19,
+  sequelize: 19.5,
   mysql: 20,
 };
 

@@ -4,6 +4,7 @@ import path from "path";
 const GITHUB_USERNAME = "alferrr";
 const OUTPUT_PATH = path.resolve("src/data/projects.json");
 const INCLUDE = [
+  "ciscogni",
   "jeepni",
   "motiq",
   "kwnta",

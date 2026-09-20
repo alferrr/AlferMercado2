@@ -442,6 +442,12 @@ body {
           border-color: rgba(36, 150, 237, 0.35);
         }
 
+        .sequelize {
+          background: rgba(82, 176, 231, 0.14);
+          color: rgba(150, 210, 245, 0.95);
+          border-color: rgba(82, 176, 231, 0.35);
+        }
+
         .nextjs {
           background: rgba(255, 255, 255, 0.1);
           color: rgba(255, 255, 255, 0.95);
@@ -594,6 +600,28 @@ body {
 }
 
 .first-works {
+  .works-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  .works-grid .container {
+    width: calc(50% - 1rem);
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 20px 20px 2rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .container {
     .text {
       width: 100%;
@@ -650,6 +678,10 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+  .first-works .works-grid .container {
+    width: 100%;
+  }
+
   .about {
     main {
       flex-direction: column-reverse;

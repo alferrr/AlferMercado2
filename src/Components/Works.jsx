@@ -11,6 +11,7 @@ import Truth from "../assets/images/truthmatters.png";
 import Jeepni from "../assets/images/jeepni.png";
 import Kwnta from "../assets/images/kwnta.png";
 import Motiq from "../assets/images/motiq.png";
+import Ciscogni from "../assets/images/ciscogniPoster.png";
 import Wandmag from "../assets/images/wandmag-new.png";
 import { Link } from "react-router-dom";
 
@@ -25,12 +26,19 @@ const PROJECT_IMAGES = {
   jeepni: Jeepni,
   kwnta: Kwnta,
   motiq: Motiq,
+  ciscogni: Ciscogni,
   wanderingmagnolia: Wandmag,
 };
 
-const INCLUDE = ["jeepni", "motiq", "wanderingmagnolia", "kwnta", "anguledger"];
+const INCLUDE = ["ciscogni", "jeepni", "motiq", "kwnta"];
 
 const OVERRIDES = {
+  ciscogni: {
+    title: "Ciscogni",
+    description:
+      "Gamified practice platform for USC Programming 1 and 2 students, with quiz sessions, XP, streaks, achievements, and class leaderboards.",
+    stack: ["nextjs", "typescript", "sequelize"],
+  },
   motiq: {
     title: "Motiq",
   },
@@ -107,6 +115,7 @@ const STACK_ORDER = {
   cloudinary: 17,
   docker: 18,
   nodejs: 19,
+  sequelize: 19.5,
   mysql: 20,
 };
 
@@ -195,55 +204,57 @@ export default function Works() {
           </p>
         )}
 
-        {!loading &&
-          !error &&
-          projects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, ease: easeIn }}
-              className="container"
-            >
-              {project.image ? (
-                <img src={project.image} alt={project.title} />
-              ) : (
-                <div className="no-image">{project.title[0]}</div>
-              )}
+        <div className="works-grid">
+          {!loading &&
+            !error &&
+            projects.map((project) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: easeIn }}
+                className="container"
+              >
+                {project.image ? (
+                  <img src={project.image} alt={project.title} />
+                ) : (
+                  <div className="no-image">{project.title[0]}</div>
+                )}
 
-              <div className="text">
-                <div className="cntr">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  {project.stack.length > 0 && (
-                    <div className="stack">
-                      {sortStack(project.stack).map((tag) => (
-                        <span key={tag} className={tag.toLowerCase()}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                <div className="text">
+                  <div className="cntr">
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    {project.stack.length > 0 && (
+                      <div className="stack">
+                        {sortStack(project.stack).map((tag) => (
+                          <span key={tag} className={tag.toLowerCase()}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {project.offline ? (
+                    <span className="offline-badge">Server Offline</span>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.link.includes("github.com")
+                        ? "View Repo"
+                        : "View Website"}{" "}
+                      <IoMdArrowForward className="icon" />
+                    </a>
                   )}
                 </div>
-
-                {project.offline ? (
-                  <span className="offline-badge">Server Offline</span>
-                ) : (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.link.includes("github.com")
-                      ? "View Repo"
-                      : "View Website"}{" "}
-                    <IoMdArrowForward className="icon" />
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+        </div>
 
         <Link to="/works" className="seemore">
           See more of my Works

@@ -1,5 +1,16 @@
 [
   {
+    "id": 1254482027,
+    "title": "Ciscogni",
+    "description": "Gamified practice platform for USC Programming 1 and 2 students, with quiz sessions, XP, streaks, achievements, and class leaderboards.",
+    "stack": [
+      "nextjs",
+      "sequelize",
+      "typescript"
+    ],
+    "link": "https://github.com/alferrr/ciscogni"
+  },
+  {
     "id": 1200075353,
     "title": "JeepNi",
     "description": "JeepNi is a community-driven Cebu transport app for jeepneys, buses, and tricycles with route planning, real-time alerts, intelligent rerouting, rewards, and local business promotions.",
